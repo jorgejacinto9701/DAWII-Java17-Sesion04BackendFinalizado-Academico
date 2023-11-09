@@ -9,12 +9,14 @@ import com.empresa.entity.Docente;
 
 public interface DocenteRepository extends JpaRepository<Docente, Integer> {
 
-	
-
-
 	@Query("select x from Docente x where x.nombre like ?1")
 	public List<Docente> listaPorNombreLike(String nombre);
-	
+
+	@Query("select x from Docente x where (x.nombre like ?1) and "
+										+ "(?2 = '' or x.dni = ?2) and "
+										+ "(x.estado = ?3) and "
+										+ "(?4 = -1 or x.ubigeo.idUbigeo = ?4)")
+	public List<Docente> listaConsultaDinamica(String nombre, String dni, int estado,int idUbigeo);
 	
 }
 

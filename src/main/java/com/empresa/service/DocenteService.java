@@ -11,5 +11,6 @@ public interface DocenteService {
 	public abstract List<Docente> listaDocentePorNombreLike(String nombre);
 	public abstract void eliminaDocente(int idDocente);
 
-	
+	//consulta
+	public List<Docente> listaConsultaDinamica(String nombre, String dni, int estado,int idUbigeo);
 }

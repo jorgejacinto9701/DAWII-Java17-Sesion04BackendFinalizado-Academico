@@ -32,4 +32,10 @@ public class DocenteServiceImpl implements DocenteService {
 	}
 
 
+	@Override
+	public List<Docente> listaConsultaDinamica(String nombre, String dni, int estado, int idUbigeo) {
+		return repository.listaConsultaDinamica(nombre, dni, estado, idUbigeo);
+	}
+
+
 }
